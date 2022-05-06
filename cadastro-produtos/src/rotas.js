@@ -1,20 +1,20 @@
 import React from "react";
 
-import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './views/home';
-import CadastroProdutos from "./views/produtos/cadastro";
+import CadastroProduto from "./views/produtos/cadastro";
 
-export default () => {
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
+function Rotas() {
     return(
-        <HashRouter>
+        <BrowserRouter>
             <Routes>
-                <Route exact path="/cadastro-produtos" component={CadastroProdutos} />
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" component={Home}></Route>
+                <Route exact path="/cadastro-produtos" component={CadastroProduto}></Route>
             </Routes>
-        
-        </HashRouter>
-    )
-
+        </BrowserRouter>
+    );
 }
 
+export default Rotas;
